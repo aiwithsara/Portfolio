@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Srikkandh Srikanth | Senior Finance Professional</title>
     
-    <!-- Google Fonts (Poppins for modern look matching Palki) -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Bootstrap 5 CSS -->
@@ -16,7 +16,7 @@
 
     <style>
         :root {
-            /* Palki Template Primary Color (Pink/Red) */
+            /* Primary Color (Blue as per your snippet) */
             --primary-color: #2563EB; 
             --dark-bg: #1a1a1a;
             --light-bg: #f9f9f9;
@@ -55,12 +55,11 @@
             color: var(--primary-color) !important;
         }
         .navbar-toggler-icon {
-            background-color: #fff; /* White hamburger menu */
+            background-color: #fff;
         }
 
         /* --- Hero Section --- */
         .hero {
-            /* Placeholder Background Image */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
@@ -115,10 +114,10 @@
         }
 
         .btn-custom:hover {
-            background-color: #d62f58;
+            background-color: #1d4ed8;
             color: white;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(243, 58, 106, 0.4);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
         }
 
         /* --- Section Styling --- */
@@ -177,7 +176,7 @@
             position: relative;
         }
 
-        /* --- Pink CTA Strip --- */
+        /* --- CTA Strip --- */
         .cta-strip {
             background-color: var(--primary-color);
             color: white;
@@ -198,7 +197,7 @@
 
         .service-box:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(243, 58, 106, 0.15);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15);
             border-bottom: 3px solid var(--primary-color);
         }
 
@@ -206,7 +205,7 @@
             font-size: 35px;
             color: var(--primary-color);
             margin-bottom: 25px;
-            background: #fff0f5;
+            background: #eff6ff;
             width: 80px;
             height: 80px;
             line-height: 80px;
@@ -266,7 +265,7 @@
             letter-spacing: 1px;
         }
 
-        /* --- Education / Pricing Style --- */
+        /* --- Education Style --- */
         .edu-card {
             border: 1px solid #eee;
             padding: 50px 30px;
@@ -275,6 +274,7 @@
             position: relative;
             background: #fff;
             border-radius: 8px;
+            height: 100%;
         }
         .edu-card:hover {
             border-color: var(--primary-color);
@@ -365,6 +365,31 @@
             background: var(--primary-color);
         }
 
+        /* --- Floating Whatsapp --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 9999;
+        }
+        .whatsapp-float i {
+            line-height: 60px;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+            color: #fff;
+        }
+
         /* Mobile adjustments */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
@@ -372,30 +397,6 @@
             .cta-strip { text-align: center; }
             .cta-strip .text-md-end { margin-top: 20px; }
         } 
-        .whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 25px;
-  right: 25px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 32px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 9999;
-}
-
-.whatsapp-float i {
-  line-height: 60px;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
-}
     </style>
 </head>
 <body>
@@ -422,24 +423,17 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-content">
-            <!-- Profile Image Placeholder -->
-            <img src="https://ui-avatars.com/api/?name=Srikkandh+Srikanth&background=F33A6A&color=fff&size=150" alt="Srikkandh Srikanth">
+            <!-- Profile Image -->
+            <img src="https://ui-avatars.com/api/?name=Srikkandh+Srikanth&background=2563EB&color=fff&size=150" alt="Srikkandh Srikanth">
             <h3>Hello, I'm</h3>
             <h1>Srikkandh Srikanth</h1>
             <p>Vendor Master Data Analyst | Senior Finance Professional | SAP Expert</p>
             <div class="d-flex justify-content-center gap-3">
+                <!-- Fixed: Removed duplicate button, added valid Download link -->
                 <a href="#contact" class="btn btn-custom">Work Together</a>
-             <a href="#contact" class="btn btn-custom">
-    Work Together
-  </a>
-
-  <a
-    href="https://wa.me/918124086279?text=Hi,%20I%20saw%20your%20profile%20and%20would%20like%20to%20connect%20with%20you."
-    target="_blank"
-    class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold"
-  >
-    Chat on WhatsApp
-  </a>
+                <a href="Srikkandh resume 2025.pdf" download="Srikkandh_Resume_2025.pdf" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold" style="border: 2px solid white; display: flex; align-items: center;">
+                   Download CV
+                </a>
             </div>
         </div>
     </section>
@@ -664,7 +658,7 @@
         </div>
     </section>
 
-    <!-- Education & Certifications (Pricing Style) -->
+    <!-- Education & Certifications (Fixed: Removed Contact Me buttons) -->
     <section class="section-padding bg-light">
         <div class="container">
             <div class="section-header">
@@ -679,7 +673,6 @@
                         <p class="text-muted">Loyola College (PULC), Chennai</p>
                         <hr>
                         <p class="small text-muted">Achieved 68%</p>
-                        <a href="#contact" class="btn btn-outline-dark rounded-pill btn-sm mt-3">Contact Me</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -690,7 +683,6 @@
                         <p class="text-muted">Tagore Arts College, Chennai</p>
                         <hr>
                         <p class="small text-muted">Achieved 65%</p>
-                        <a href="#contact" class="btn btn-custom rounded-pill btn-sm mt-3">Contact Me</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -700,7 +692,6 @@
                         <p class="text-muted">Awards & Recognition</p>
                         <hr>
                         <p class="small text-muted">Outstanding Performance Awards from Atos & Hapag Lloyd</p>
-                        <a href="#contact" class="btn btn-outline-dark rounded-pill btn-sm mt-3">Contact Me</a>
                     </div>
                 </div>
             </div>
@@ -729,32 +720,35 @@
                                 <a href="mailto:srikkandh@gmail.com">srikkandh@gmail.com</a>
                             </li>
                         </ul>
+                        <!-- Social Icons Fixed: LinkedIn, WhatsApp, Gmail -->
                         <div class="social-icons mt-4">
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/918124086279" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                            <!-- Gmail Button with pre-filled subject and body -->
+                            <a href="mailto:srikkandh@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi,%20I%20saw%20your%20profile%20and%20would%20love%20to%20connect%20and%20explore%20how%20we%20can%20work%20together.%20Please%20let%20me%20know%20a%20good%20time%20to%20talk." target="_blank"><i class="fa-brands fa-google"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-8 ps-lg-5">
                     <div class="footer-widget">
                         <h4>Send Me a Message</h4>
-                        <form>
+                        <form id="contactForm">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="First Name">
+                                    <input type="text" id="contactName" class="form-control" placeholder="Name">
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Last Name">
+                                    <input type="text" id="contactEmail" class="form-control" placeholder="Email ID">
                                 </div>
                                 <div class="col-12">
-                                    <input type="email" class="form-control" placeholder="Email Address">
+                                    <input type="text" id="contactSubject" class="form-control" placeholder="Subject">
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                                    <textarea id="contactMessage" class="form-control" rows="4" placeholder="Message"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button type="button" class="btn btn-custom w-100 py-3">Send Message</button>
+                                    <!-- Changed to type button for JS handling -->
+                                    <button type="button" class="btn btn-custom w-100 py-3" onclick="sendToWhatsapp()">Send Message</button>
                                 </div>
                             </div>
                         </form>
@@ -766,15 +760,46 @@
             </div>
         </div>
     </footer>
-<a
-  href="https://wa.me/918124086279?text=Hi,%20I%20saw%20your%20profile%20and%20would%20like%20to%20connect%20with%20you."
-  class="whatsapp-float"
-  target="_blank"
-  aria-label="Chat on WhatsApp"
->
-  <i class="fab fa-whatsapp"></i>
-</a>
+
+    <!-- Floating WhatsApp Button (Fixed text) -->
+    <a
+      href="https://wa.me/918124086279?text=Hi,%20I%20saw%20your%20profile%20and%20would%20love%20to%20connect%20and%20explore%20how%20we%20can%20work%20together.%20Please%20let%20me%20know%20a%20good%20time%20to%20talk."
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Script for Form to WhatsApp -->
+    <script>
+        function sendToWhatsapp() {
+            // Get values
+            var name = document.getElementById('contactName').value;
+            var email = document.getElementById('contactEmail').value;
+            var subject = document.getElementById('contactSubject').value;
+            var message = document.getElementById('contactMessage').value;
+
+            // Validation alert if empty
+            if (name === "" || email === "" || subject === "" || message === "") {
+                alert("Kindly fill the form to send the message");
+                return;
+            }
+
+            // Construct WhatsApp Message
+            var waMessage = "*New Contact Inquiry*" + "%0a" +
+                            "Name: " + name + "%0a" +
+                            "Email: " + email + "%0a" +
+                            "Subject: " + subject + "%0a" +
+                            "Message: " + message;
+
+            // Open WhatsApp
+            var url = "https://wa.me/918124086279?text=" + waMessage;
+            window.open(url, '_blank').focus();
+        }
+    </script>
 </body>
 </html>
