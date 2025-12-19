@@ -1,2 +1,805 @@
-# Portfolio
-Personal Portfolio 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srikkandh Srikanth | Senior Finance Professional</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Primary Color (Blue as per your snippet) */
+            --primary-color: #2563EB; 
+            --dark-bg: #1a1a1a;
+            --light-bg: #f9f9f9;
+            --text-color: #555;
+            --heading-color: #222;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            transition: all 0.3s;
+        }
+        .navbar-brand {
+            color: #fff !important;
+            font-weight: 700;
+            font-size: 24px;
+        }
+        .nav-link {
+            color: #ddd !important;
+            font-weight: 500;
+            margin-left: 20px;
+        }
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        .navbar-toggler-icon {
+            background-color: #fff;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 25px;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* --- Buttons --- */
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 35px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border: none;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #1d4ed8;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        /* --- Section Styling --- */
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h6 {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 15px auto 0;
+        }
+
+        /* --- About / Progress Bars --- */
+        .progress-container {
+            margin-bottom: 25px;
+        }
+        .progress-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .progress {
+            height: 8px;
+            border-radius: 5px;
+            background-color: #e9ecef;
+            overflow: visible; 
+        }
+        .progress-bar {
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            position: relative;
+        }
+
+        /* --- CTA Strip --- */
+        .cta-strip {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0;
+        }
+
+        /* --- Services / Competencies Boxes --- */
+        .service-box {
+            background: #fff;
+            padding: 45px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            height: 100%;
+            border-bottom: 3px solid transparent;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 35px;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            background: #eff6ff;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* --- Experience Cards --- */
+        .experience-card {
+            background: #fff;
+            border-left: 5px solid var(--primary-color);
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        
+        .experience-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .date-badge {
+            background: #222;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        /* --- Stats Section --- */
+        .stats-section {
+            background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            position: relative;
+            color: white;
+            text-align: center;
+            background-attachment: fixed;
+        }
+        .stats-overlay {
+            background: rgba(0,0,0,0.85);
+            padding: 100px 0;
+        }
+        .stat-item {
+            margin-bottom: 30px;
+        }
+        .stat-item h3 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .stat-item p {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Education Style --- */
+        .edu-card {
+            border: 1px solid #eee;
+            padding: 50px 30px;
+            text-align: center;
+            transition: 0.3s;
+            position: relative;
+            background: #fff;
+            border-radius: 8px;
+            height: 100%;
+        }
+        .edu-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .edu-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.02);
+        }
+        .corner-ribbon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            clip-path: polygon(0 0, 100% 0, 0 100%);
+        }
+        .corner-ribbon i {
+            color: white;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #111;
+            color: #aaa;
+            padding: 80px 0 20px;
+        }
+        .footer-widget h4 {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+        .contact-info li {
+            margin-bottom: 20px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            width: 25px;
+            text-align: center;
+        }
+        .contact-info a {
+            color: #aaa;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .contact-info a:hover {
+            color: var(--primary-color);
+        }
+        
+        .form-control {
+            background: #1f1f1f;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .form-control:focus {
+            background: #1f1f1f;
+            color: #fff;
+            border-color: var(--primary-color);
+            box-shadow: none;
+        }
+        
+        .social-icons a {
+            color: #fff;
+            background: #333;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            background: var(--primary-color);
+        }
+
+        /* --- Floating Whatsapp --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 9999;
+        }
+        .whatsapp-float i {
+            line-height: 60px;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+            color: #fff;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .edu-card.featured { transform: scale(1); margin-top: 20px; margin-bottom: 20px;}
+            .cta-strip { text-align: center; }
+            .cta-strip .text-md-end { margin-top: 20px; }
+        } 
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SRIKKANDH<span style="color:var(--primary-color)">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#competencies">Competencies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <!-- Profile Image -->
+            <img src="https://ui-avatars.com/api/?name=Srikkandh+Srikanth&background=2563EB&color=fff&size=150" alt="Srikkandh Srikanth">
+            <h3>Hello, I'm</h3>
+            <h1>Srikkandh Srikanth</h1>
+            <p>Vendor Master Data Analyst | Senior Finance Professional | SAP Expert</p>
+            <div class="d-flex justify-content-center gap-3">
+                <!-- Fixed: Removed duplicate button, added valid Download link -->
+                <a href="#contact" class="btn btn-custom">Work Together</a>
+                <a href="Srikkandh resume 2025.pdf" download="Srikkandh_Resume_2025.pdf" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold" style="border: 2px solid white; display: flex; align-items: center;">
+                   Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h6>My Self</h6>
+                <h2>About Me</h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow" alt="Office Working">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h3>Driving Financial Growth Through Data Integrity</h3>
+                    <p class="text-muted mt-3">
+                        I am a finance professional with over 5 years of experience in Financial Analysis, Reporting, and Vendor Master Data Management. Currently based in Chennai, I specialize in ensuring data integrity within SAP environments, optimizing working capital, and streamlining Accounts Payable processes.
+                    </p>
+                    <p class="text-muted mb-4">
+                        My career spans international experience in Jordan and India, managing relationships with 200+ international suppliers and upholding 100% accuracy in financial reporting.
+                    </p>
+                    
+                    <!-- Progress Bars -->
+                    <div>
+                        <div class="progress-container">
+                            <div class="progress-title"><span>SAP S/4 HANA / CIRA</span> <span>95%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 95%"></div></div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-title"><span>Vendor Data Management</span> <span>90%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-title"><span>Financial Reporting (IFRS)</span> <span>90%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-title"><span>MS Excel (Pivot/VLOOKUP)</span> <span>95%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 95%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section class="cta-strip">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8 text-center text-md-start">
+                    <h3 class="m-0 fw-bold">Let's Work Together! Connect With Me Right Here.</h3>
+                </div>
+                <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
+                    <a href="#contact" class="btn btn-light rounded-pill px-5 py-3 text-dark fw-bold">Contact Now!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Competencies (Top Categories) -->
+    <section id="competencies" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h6>Core Skills</h6>
+                <h2>Key Competencies</h2>
+            </div>
+            <div class="row g-4">
+                <!-- Item 1 -->
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+                        <h5>Vendor Master Data</h5>
+                        <p class="text-muted small">Managed end-to-end vendor data creation in SAP, CIRA, & NOVA, ensuring SOX compliance and audit readiness.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h5>Financial Analysis</h5>
+                        <p class="text-muted small">Reporting Budget twice a year, Gap Analysis, and monthly P&L/Balance Sheet reporting using SAP Analysis.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <div class="service-icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
+                        <h5>Cash Flow Management</h5>
+                        <p class="text-muted small">Optimizing working capital, monitoring liquidity, and executing electronic payments (ACH/Wire).</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <div class="service-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                        <h5>Reconciliation</h5>
+                        <p class="text-muted small">Bank Reconciliation Statements (BRS), Supplier Reconciliation, and inter-company ledger management.</p>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h5>Audit & Compliance</h5>
+                        <p class="text-muted small">Handling auditor queries, tax identification validation (GST/PAN/W9), and ensuring internal policy adherence.</p>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+                        <h5>Process Optimization</h5>
+                        <p class="text-muted small">Developing SOPs and automating workflows, reducing process time by 50% in previous roles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Awesome Gallery) -->
+    <section id="experience" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h6>Portfolio</h6>
+                <h2>Professional Experience</h2>
+            </div>
+            
+            <div class="row">
+                <!-- Current Role -->
+                <div class="col-lg-6">
+                    <div class="experience-card">
+                        <span class="date-badge">Present</span>
+                        <h4>Vendor Master Data Analyst - AP</h4>
+                        <p class="text-primary mb-2"><strong>Freelance / Contract</strong></p>
+                        <hr>
+                        <ul class="text-muted small ps-3">
+                            <li>Managed end-to-end vendor master data creation and maintenance within SAP.</li>
+                            <li>Verified banking details, tax IDs (PAN, GST, W9), and payment terms.</li>
+                            <li>Supported month-end closing ensuring vendor data accuracy.</li>
+                            <li>Streamlined vendor creation and approval workflows by leveraging system tools.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Previous Role 1 -->
+                <div class="col-lg-6">
+                    <div class="experience-card">
+                        <span class="date-badge">Sep 2023 - Jan 2025</span>
+                        <h4>Senior Accountant - Finance</h4>
+                        <p class="text-primary mb-2"><strong>Classic Fashion Apparel Industry (Jordan)</strong></p>
+                        <hr>
+                        <ul class="text-muted small ps-3">
+                            <li>Maintained 100% accuracy in financial transaction entry.</li>
+                            <li>Managed relationships with 10+ international banks and 200+ suppliers.</li>
+                            <li>Performed monthly BRS and reconciled multiple currency accounts.</li>
+                            <li>Facilitated electronic payments encompassing checks, ACH, and wire transfers.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Previous Role 2 -->
+                <div class="col-lg-6">
+                    <div class="experience-card">
+                        <span class="date-badge">May 2022 - Jan 2023</span>
+                        <h4>Senior Finance Associate</h4>
+                        <p class="text-primary mb-2"><strong>Atos SE MNC (Chennai)</strong></p>
+                        <hr>
+                        <ul class="text-muted small ps-3">
+                            <li>Reduced process time by 50% by implementing standardized templates.</li>
+                            <li>Proficient in SAP S/4 HANA and HFM for P&L/Balance Sheet reporting.</li>
+                            <li>Identified incorrect entries in SAP to rectify before book closure.</li>
+                            <li>Thoroughly reviewed all balances pertaining to Profit & Loss.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Previous Role 3 -->
+                <div class="col-lg-6">
+                    <div class="experience-card">
+                        <span class="date-badge">Jun 2019 - Apr 2022</span>
+                        <h4>Associate</h4>
+                        <p class="text-primary mb-2"><strong>Hapag Lloyd Logistics Global MNC</strong></p>
+                        <hr>
+                        <ul class="text-muted small ps-3">
+                            <li>Set a new record of completing the highest number of corrections in a day.</li>
+                            <li>Provided production support with technical expertise.</li>
+                            <li>Hosted organization award functions and led transitions.</li>
+                            <li>Achieved high productivity and accuracy in customer service support.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 stat-item">
+                        <h3>5+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="col-md-3 stat-item">
+                        <h3>100%</h3>
+                        <p>Reporting Accuracy</p>
+                    </div>
+                    <div class="col-md-3 stat-item">
+                        <h3>200+</h3>
+                        <p>Vendors Managed</p>
+                    </div>
+                    <div class="col-md-3 stat-item">
+                        <h3>50%</h3>
+                        <p>Time Reduction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications (Fixed: Removed Contact Me buttons) -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h6>Qualifications</h6>
+                <h2>Education</h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="edu-card">
+                        <h5>MBA (Finance)</h5>
+                        <h2 class="text-primary my-3">2021</h2>
+                        <p class="text-muted">Loyola College (PULC), Chennai</p>
+                        <hr>
+                        <p class="small text-muted">Achieved 68%</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="edu-card featured">
+                        <div class="corner-ribbon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h5>B.Com (Finance)</h5>
+                        <h2 class="text-primary my-3">2019</h2>
+                        <p class="text-muted">Tagore Arts College, Chennai</p>
+                        <hr>
+                        <p class="small text-muted">Achieved 65%</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="edu-card">
+                        <h5>Honors</h5>
+                        <h2 class="text-primary my-3"><i class="fa-solid fa-trophy"></i></h2>
+                        <p class="text-muted">Awards & Recognition</p>
+                        <hr>
+                        <p class="small text-muted">Outstanding Performance Awards from Atos & Hapag Lloyd</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <div class="footer-widget">
+                        <h4>Contact Info</h4>
+                        <p class="mb-4">Currently available for new opportunities in Finance and Data Analysis. I am confident that my skills make me a valuable asset to your organization.</p>
+                        <ul class="contact-info ps-0">
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i> 
+                                <span>Chennai City, TN, India</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-phone"></i> 
+                                <a href="tel:+918124086279">+91 8124086279</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i> 
+                                <a href="mailto:srikkandh@gmail.com">srikkandh@gmail.com</a>
+                            </li>
+                        </ul>
+                        <!-- Social Icons Fixed: LinkedIn, WhatsApp, Gmail -->
+                        <div class="social-icons mt-4">
+                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/918124086279" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                            <!-- Gmail Button with pre-filled subject and body -->
+                            <a href="mailto:srikkandh@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi,%20I%20saw%20your%20profile%20and%20would%20love%20to%20connect%20and%20explore%20how%20we%20can%20work%20together.%20Please%20let%20me%20know%20a%20good%20time%20to%20talk." target="_blank"><i class="fa-brands fa-google"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 ps-lg-5">
+                    <div class="footer-widget">
+                        <h4>Send Me a Message</h4>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" id="contactName" class="form-control" placeholder="Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" id="contactEmail" class="form-control" placeholder="Email ID">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" id="contactSubject" class="form-control" placeholder="Subject">
+                                </div>
+                                <div class="col-12">
+                                    <textarea id="contactMessage" class="form-control" rows="4" placeholder="Message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <!-- Changed to type button for JS handling -->
+                                    <button type="button" class="btn btn-custom w-100 py-3" onclick="sendToWhatsapp()">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 pt-4 border-top border-secondary">
+                <p class="small mb-0">Copyright © 2025 Srikkandh Srikanth. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button (Fixed text) -->
+    <a
+      href="https://wa.me/918124086279?text=Hi,%20I%20saw%20your%20profile%20and%20would%20love%20to%20connect%20and%20explore%20how%20we%20can%20work%20together.%20Please%20let%20me%20know%20a%20good%20time%20to%20talk."
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Script for Form to WhatsApp -->
+    <script>
+        function sendToWhatsapp() {
+            // Get values
+            var name = document.getElementById('contactName').value;
+            var email = document.getElementById('contactEmail').value;
+            var subject = document.getElementById('contactSubject').value;
+            var message = document.getElementById('contactMessage').value;
+
+            // Validation alert if empty
+            if (name === "" || email === "" || subject === "" || message === "") {
+                alert("Kindly fill the form to send the message");
+                return;
+            }
+
+            // Construct WhatsApp Message
+            var waMessage = "*New Contact Inquiry*" + "%0a" +
+                            "Name: " + name + "%0a" +
+                            "Email: " + email + "%0a" +
+                            "Subject: " + subject + "%0a" +
+                            "Message: " + message;
+
+            // Open WhatsApp
+            var url = "https://wa.me/918124086279?text=" + waMessage;
+            window.open(url, '_blank').focus();
+        }
+    </script>
+</body>
+</html>
